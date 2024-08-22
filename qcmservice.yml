@@ -1,6 +1,5 @@
-server:
-  port: 8081
-spring:
-  application:
-    name: qcmservice
-
+info:
+  app:
+    name: "qcmservice"
+    description: "To handle creating, updating, deleting, and managing questionnaires."
+    version: "1.0.0"
