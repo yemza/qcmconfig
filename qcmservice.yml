@@ -3,7 +3,6 @@ info:
     name: "qcmservice"
     description: "To handle creating, updating, deleting, and managing questionnaires."
     version: "1.0.0"
-
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/qcm
