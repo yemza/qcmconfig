@@ -1,3 +1,5 @@
+server:
+  port: 8081
 info:
   app:
     name: "qcmservice"
@@ -13,3 +15,5 @@ spring:
   sql:
     init:
       mode: always
+  profiles:
+    active: native
