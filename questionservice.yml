@@ -19,3 +19,7 @@ spring:
       mode: always
   profiles:
     active: native
+
+qcm:
+  feign:
+    url: http://localhost:8081
