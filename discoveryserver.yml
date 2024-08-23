@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+info:
+  app:
+    name: "discoveryserver"
+    description: "To handle service discovery and dynamic scaling."
+    version: "1.0.0"
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

@@ -2,8 +2,8 @@ server:
   port: 8083
 info:
   app:
-    name: "questionservice"
-    description: "To manage individual questions and their answers."
+    name: "resultservice"
+    description: "To handle the calculation and storage of users' responses and results."
     version: "1.0.0"
 spring:
   datasource:
