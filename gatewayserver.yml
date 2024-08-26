@@ -45,16 +45,14 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
 
-
-
-
-
-
-
-
-
-
-
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    exporter:
+      otlp:
+        endpoint: http://localhost:4317
+    enabled: true
 
 
 
