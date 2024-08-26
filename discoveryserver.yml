@@ -11,3 +11,14 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    exporter:
+      zipkin:
+        enabled: true
+        endpoint: http://localhost:9411/zipkin
+    enabled: true
