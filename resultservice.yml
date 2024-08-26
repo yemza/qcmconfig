@@ -57,3 +57,12 @@ management:
   endpoint:
     health:
       show-details: always
+  tracing:
+    sampling:
+      probability: 1.0
+    exporter:
+      zipkin:
+        enabled: true
+        endpoint: http://zipkin-server:9411/api/v2/spans
+    enabled: true
+
