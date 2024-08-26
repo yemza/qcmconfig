@@ -30,6 +30,9 @@ spring:
 
           filters:
             - RewritePath=/cards/(?<segment>.*), /${segment}
+  sleuth:
+    reactor:
+      instrumentation-type: decorate_on_each
 
 eureka:
   instance:
@@ -40,7 +43,6 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
-
 
 
 
