@@ -1,0 +1,55 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: qcm-service
+          uri: lb://qcmservice
+          predicates:
+            - Path=/api/v1/qcm/**
+          filters:
+            - RewritePath=/cards/(?<segment>.*), /${segment}
+
+        - id: question-service
+          uri: lb://questionservice
+          predicates:
+            - Path=/api/v1/question/**
+          filters:
+            - RewritePath=/cards/(?<segment>.*), /${segment}
+            -
+        - id: result-service
+          uri: lb://resultservice
+          predicates:
+            - Path=/api/v1/result/**
+          filters:
+            - RewritePath=/cards/(?<segment>.*), /${segment}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: hostname
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
