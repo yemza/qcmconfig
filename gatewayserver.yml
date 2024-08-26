@@ -9,6 +9,8 @@ spring:
           uri: lb://qcmservice
           predicates:
             - Path=/api/v1/qcm/**
+            - Method=GET, POST, PUT, DELETE
+
           filters:
             - RewritePath=/cards/(?<segment>.*), /${segment}
 
@@ -16,20 +18,23 @@ spring:
           uri: lb://questionservice
           predicates:
             - Path=/api/v1/question/**
+            - Method=GET, POST, PUT, DELETE
           filters:
             - RewritePath=/cards/(?<segment>.*), /${segment}
-            -
+
         - id: result-service
           uri: lb://resultservice
           predicates:
             - Path=/api/v1/result/**
+            - Method=GET, POST, PUT, DELETE
+
           filters:
             - RewritePath=/cards/(?<segment>.*), /${segment}
 
 eureka:
   instance:
     prefer-ip-address: true
-    hostname: hostname
+    hostname: localhost
   client:
     fetch-registry: true
     register-with-eureka: true
